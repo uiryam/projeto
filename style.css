@@ -8,22 +8,24 @@
   --text-color: white;
   --bg-url: url(./assets/bg-mobile.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
-  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color: rgba(100, 100, 100, 0.4);
   --surface-color-hover: rgba(0, 0, 0, 0.05);
-  --highlight-color: rgba(255, 255, 255, 0.2);
+  --highlight-color: rgba(0, 0, 0, 0.2);
   --switch-bg-url: url(./assets/moon-stars.svg);
   --switch-color: rgba(255, 255, 255, 0.05);
+  --text-color-footer: black;
 }
 
 .light {
   --text-color: black;
   --bg-url: url(./assets/bg-mobile-light.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
-  --surface-color: rgba(0, 0, 0, 0.07);
-  --surface-color-hover: rgba(0, 0, 0, 0.01);
+  --surface-color: rgba(10, 10, 10, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.05);
   --highlight-color: rgba(0, 0, 0, 0.1);
   --switch-bg-url: url(./assets/sun.svg);
   --switch-color: rgba(0, 0, 0, 0.02);
+  --text-color-footer: white;
 }
 
 body {
@@ -35,7 +37,8 @@ body {
   */
 
   /*background: color image repeat position/size */
-  background: var(--bg-url) no-repeat top center/cover;
+  /*background: var(--bg-url) no-repeat top center/cover; */
+  background: var(--bg-url) no-repeat center/cover;
   height: 100vh;
 }
 
@@ -154,7 +157,8 @@ ul li a {
 /*pseudo-selector */
 ul li a:hover {
   background: var(--surface-color-hover);
-  border: 1.5px solid var(--text-color);
+  border: 1.5px solid var(--text-color-footer);
+  transition: background 1s;
 }
 
 /*social links*/
@@ -171,7 +175,7 @@ ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 13px;
 
   transition: background 1s;
   border-radius: 50%;
@@ -179,15 +183,30 @@ ul li a:hover {
 
 #social-links a:hover {
   background: var(--highlight-color);
+  padding: 16;
+  transition: background 1s;
 }
 
+#social-links ion-icon {
+  color: var(--text-color-footer);
+  padding: 3px;
+  border-radius: 50%;
+  background: var(--stroke-color);
+}
+
+/*texto do final da pagina*/
 footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
+  color: white;
 }
 
-/* media queries */
+footer a {
+  color: white;
+}
+
+/* media queries (adaptação do backgroud a tela do dispositivo */
 @media (min-width: 700px) {
   :root {
     --bg-url: url(./assets/bg-desktop.jpg);
@@ -198,7 +217,7 @@ footer {
   }
 }
 
-/*Animation*/
+/*Animation do botão*/
 @keyframes slide-in {
   from {
     left: 0;
@@ -215,5 +234,4 @@ footer {
   to {
     left: 0;
   }
-
 }
