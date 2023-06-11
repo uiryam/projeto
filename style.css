@@ -169,6 +169,7 @@ ul li a:hover {
   padding: 24px 0;
 
   font-size: 24px;
+  transition: background 1s;
 }
 
 #social-links a {
